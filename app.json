@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/classic/classic"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#F7F7F7",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap81.json"
+}
