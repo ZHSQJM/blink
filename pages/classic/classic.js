@@ -17,18 +17,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      //  wx.request({
-      //    url: 'http://localhost:8002/v1/api/mock/classic/latest',
-      //    header:{
-      //      token:"123"
-      //    },
-      //    success: (res)=>{
-      //      let result = res.data;
-      //      if (result.code === 1){
-      //        console.log(result.data);   
-      //      }
-      //    }
-      //  })
     classic.getLatest((res)=>{
      this.setData({
        classic:res
@@ -45,11 +33,31 @@ Page({
   },
 
   onPrevious:function(event){
-
+       this._updateClassic('next')
   },
   onNext:function(event){
 
+       this._updateClassic('previous')
   },
+  
+  
+  /**上一页 或者下一页*/
+   _updateClassic: function (nextOrPrevious) {
+	   console.log(nextOrPrevious);
+        const index = this.data.classic.index
+		console.log(index);
+        classic.getClassic(index, nextOrPrevious, (res) => {
+          this.setData({
+            classic: res,
+            latest: classic.isLatest(res.index),
+            first: classic.isFirst(res.index)
+          })
+        })
+      },
+	  
+	  
+	  
+	
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
