@@ -1,1 +1,1 @@
-/* component/classic/essay/index.wxss */
+@import "../common.wxss";

@@ -10,7 +10,9 @@ Page({
   data: {
     classic:null,
     latest:true,
-    first:false
+    first:false,
+	likecount:0,
+	likeStatus:false
   },
 
   /**
@@ -43,10 +45,10 @@ Page({
   
   /**上一页 或者下一页*/
    _updateClassic: function (nextOrPrevious) {
-	   console.log(nextOrPrevious);
+
         const index = this.data.classic.index
-		console.log(index);
         classic.getClassic(index, nextOrPrevious, (res) => {
+			this._getLikeStatus(res.id,res.type)
           this.setData({
             classic: res,
             latest: classic.isLatest(res.index),
@@ -55,8 +57,15 @@ Page({
         })
       },
 	  
-	  
-	  
+	_getLikeStatus:function(artId,category){
+		
+		like.getClassicLikeStatus(artId,category,(res)=>{
+			this.setData({
+				likecount:res.fav_nums,
+				likeStatus:res.like_status
+				})
+		})
+	},
 	
   /**
    * 生命周期函数--监听页面初次渲染完成

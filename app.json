@@ -8,5 +8,6 @@
     "navigationBarTitleText": "首页",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap81.json"
+  "sitemapLocation": "sitemap81.json",
+  "requiredBackgroundModes": ["audio"]
 }
