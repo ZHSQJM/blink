@@ -15,6 +15,23 @@ import {HTTP} from '../utils/http-p.js'
 		 })
 	 }
 	 
+	 getDetail(bid){
+		 return this.request({
+			 url:`mock/book/${bid}/detail`
+		 })
+	 }
+	 getLikeStatus(bid){
+	 		 return this.request({
+	 			 url:`mock/book/${bid}/favor`
+	 		 })
+	 }
+	 
+	 getComments(bid){
+	 		 return this.request({
+	 			 url:`mock/book/${bid}/short_comment`
+	 		 })
+	 }
+	 
  }
  
  export {BookModel}

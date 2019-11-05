@@ -1,10 +1,14 @@
-// component/book/index.js
+// component/tag/index.js
 Component({
   /**
    * 组件的属性列表
    */
+  options:{
+	  //启动插槽
+	  multipleSlots:true
+  },
   properties: {
-	book:Object
+            text:String
   },
 
   /**
@@ -19,11 +23,5 @@ Component({
    */
   methods: {
 
-	 onTap(event){
-		 const bid = this.properties.book.id;
-		 wx.navigateTo({
-			 url:`/pages/book-detail/book-detail?bid=${bid}`
-		 })
-	 }
   }
 })
