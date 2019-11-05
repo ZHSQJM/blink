@@ -25,7 +25,7 @@ Component({
   methods: {
     onLeft:function(event){
      if(!this.properties.latest){
-		 console.log("dads");
+
        this.triggerEvent("left", {}, {})
      }
     
@@ -33,7 +33,7 @@ Component({
 
     onRight: function (event) {
       if(!this.properties.first){
-		   console.log("dads");
+	
         this.triggerEvent("right", {}, {})
       }
     }

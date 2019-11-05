@@ -29,7 +29,6 @@ Page({
 
 
   onLike:function(event){
-  console.log(event)
   let behavior = event.detail.behavior;
     like.like(behavior, this.data.classic.id,this.data.classic.type)
   },

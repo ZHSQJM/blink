@@ -18,9 +18,7 @@ class ClassicModel extends HTTP{
 			// key 确定key
 			let key = nextOrPrevious == 'next' ?
 				this._getKey(index + 1) : this._getKey(index - 1)
-				console.log(key+"-----")
 			let classic = wx.getStorageSync(key)
-			console.log(classic+"========");
 			if (!classic) {
 				this.request({
 					url:`mock/classic/${index}/${nextOrPrevious}`,
